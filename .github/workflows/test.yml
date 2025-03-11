@@ -33,3 +33,7 @@ jobs:
         issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
         api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
         api-private-key: ${{ secrets.APPSTORE_PRIVATE_KEY }}
+    - name: List provisioning profiles
+      run: |
+        ls -la ~/Library/MobileDevice/Provisioning\ Profiles/
+        grep -l "com.sllvn.example" ~/Library/MobileDevice/Provisioning\ Profiles/*.mobileprovision || echo "No matching profiles found"
