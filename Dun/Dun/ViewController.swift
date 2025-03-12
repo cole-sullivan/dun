@@ -75,7 +75,6 @@ class ViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        title = "Tasks"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
