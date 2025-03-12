@@ -26,6 +26,7 @@ jobs:
         code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
         team-id: ${{ secrets.TEAM_ID }}
         export-method: "development"
+        output-path: .build/Artifacts/Example-iOS.ipa/Example-iOS.ipa
     - uses: Apple-Actions/upload-testflight-build@master
       with:
         app-path: .build/Artifacts/Example-iOS.ipa/Example-iOS.ipa
