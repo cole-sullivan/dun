@@ -33,7 +33,15 @@ jobs:
       uses: einaregilsson/build-number@v3
       with:
         token: ${{ secrets.github_token }}
-    - run: ./Build
+    - uses: yukiarrr/ios-build-action@v1.12.0
+      with:
+        project-path: Example-iOS/Example-iOS.xcodeproj
+        p12-key-base64: ${{ secrets.P12_KEY_BASE64 }}
+        p12-cer-base64: ${{ secrets.P12_CER_BASE64 }}
+        mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
+        code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
+        team-id: ${{ secrets.TEAM_ID }}
+        export-method: "development"
     - uses: Apple-Actions/upload-testflight-build@master
       with:
         app-path: .build/Artifacts/Example-iOS.ipa/Example-iOS.ipa
