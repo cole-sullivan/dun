@@ -1,2 +1,2 @@
 # Example-iOS
-Testing how to use Apple development GitHub Actions.
+Testing how to use Apple development GitHub Actions
