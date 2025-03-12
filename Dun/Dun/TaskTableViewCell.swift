@@ -95,4 +95,11 @@ class TaskTableViewCell: UITableViewCell {
             titleLabel.text = task.title
         }
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // Add padding by inset content
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
+    }
 } 

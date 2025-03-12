@@ -50,6 +50,17 @@ class ViewController: UIViewController {
         ]
         
         tableView.reloadData()
+        
+        // Remove separator lines between tasks
+        tableView.separatorStyle = .none
+        
+        // Remove extra space at the top
+        tableView.contentInsetAdjustmentBehavior = .never
+        
+        // Adjust insets to start just below the notch/dynamic island
+        let window = UIApplication.shared.windows.first
+        let topPadding = window?.safeAreaInsets.top ?? 0
+        tableView.contentInset = UIEdgeInsets(top: topPadding, left: 0, bottom: 0, right: 0)
     }
     
     // MARK: - UI Setup
@@ -142,7 +153,15 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
