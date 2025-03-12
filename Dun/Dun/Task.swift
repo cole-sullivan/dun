@@ -1,6 +1,6 @@
 import Foundation
 
-struct Task {
+struct TodoTask {
     let id: UUID
     var title: String
     var isCompleted: Bool

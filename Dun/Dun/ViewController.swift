@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: - Properties
-    private var tasks: [Task] = []
+    private var tasks: [TodoTask] = []
     
     // MARK: - UI Elements
     private let tableView: UITableView = {
@@ -44,9 +44,9 @@ class ViewController: UIViewController {
         
         // Add some sample tasks
         tasks = [
-            Task(title: "Buy groceries"),
-            Task(title: "Finish project", isCompleted: true),
-            Task(title: "Call mom")
+            TodoTask(title: "Buy groceries"),
+            TodoTask(title: "Finish project", isCompleted: true),
+            TodoTask(title: "Call mom")
         ]
         
         tableView.reloadData()
@@ -95,7 +95,7 @@ class ViewController: UIViewController {
         let addAction = UIAlertAction(title: "Add", style: .default) { [weak self] _ in
             guard let self = self, let taskTitle = alertController.textFields?.first?.text, !taskTitle.isEmpty else { return }
             
-            let newTask = Task(title: taskTitle)
+            let newTask = TodoTask(title: taskTitle)
             self.tasks.append(newTask)
             
             let indexPath = IndexPath(row: self.tasks.count - 1, section: 0)

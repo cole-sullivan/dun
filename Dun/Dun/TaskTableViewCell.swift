@@ -58,7 +58,7 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     // MARK: - Configuration
-    func configure(with task: Task) {
+    func configure(with task: TodoTask) {
         titleLabel.text = task.title
         checkboxButton.isSelected = task.isCompleted
         
