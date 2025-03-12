@@ -4,6 +4,14 @@ class TaskTableViewCell: UITableViewCell {
     static let identifier = "TaskTableViewCell"
     
     // MARK: - UI Elements
+    private let containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGray6
+        view.layer.cornerRadius = 12
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private let checkboxButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "circle"), for: .normal)
@@ -16,6 +24,7 @@ class TaskTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -35,18 +44,32 @@ class TaskTableViewCell: UITableViewCell {
     
     // MARK: - UI Setup
     private func setupUI() {
-        contentView.addSubview(checkboxButton)
-        contentView.addSubview(titleLabel)
+        selectionStyle = .none
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        
+        contentView.addSubview(containerView)
+        containerView.addSubview(checkboxButton)
+        containerView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            checkboxButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            checkboxButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            // Container view constraints with margins
+            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            
+            // Checkbox in top left corner
+            checkboxButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
+            checkboxButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
             checkboxButton.widthAnchor.constraint(equalToConstant: 24),
             checkboxButton.heightAnchor.constraint(equalToConstant: 24),
             
+            // Title label positioned to the right of checkbox
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
             titleLabel.leadingAnchor.constraint(equalTo: checkboxButton.trailingAnchor, constant: 12),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -12),
+            titleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -12)
         ])
         
         checkboxButton.addTarget(self, action: #selector(checkboxButtonTapped), for: .touchUpInside)
