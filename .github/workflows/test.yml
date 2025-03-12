@@ -11,12 +11,13 @@ jobs:
     timeout-minutes: 30
     steps:
     - uses: actions/checkout@v2
-    - name: "#️⃣ Generate Build Number"
+    - name: "Generate Build Number"
       id: buildnumber
       uses: einaregilsson/build-number@v3
       with:
         token: ${{ secrets.github_token }}
-    - uses: yukiarrr/ios-build-action@v1.12.0
+    - name: "Build app"
+      uses: yukiarrr/ios-build-action@v1.12.0
       with:
         project-path: Dun/Dun.xcodeproj
         p12-key-base64: ${{ secrets.P12_KEY_BASE64 }}
@@ -27,7 +28,8 @@ jobs:
         team-id: ${{ secrets.TEAM_ID }}
         output-path: .build/Artifacts/Dun.ipa/Dun.ipa
         increment-build-number: ${{ steps.buildnumber.outputs.build_number }}
-    - uses: Apple-Actions/upload-testflight-build@master
+    - name: "Upload to TestFlight"
+      uses: Apple-Actions/upload-testflight-build@master
       with:
         app-path: .build/Artifacts/Dun.ipa/Dun.ipa
         issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
