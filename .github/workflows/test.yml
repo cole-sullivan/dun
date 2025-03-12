@@ -18,18 +18,18 @@ jobs:
         token: ${{ secrets.github_token }}
     - uses: yukiarrr/ios-build-action@v1.12.0
       with:
-        project-path: Example-iOS/Example-iOS.xcodeproj
+        project-path: Dun/Dun.xcodeproj
         p12-key-base64: ${{ secrets.P12_KEY_BASE64 }}
         p12-cer-base64: ${{ secrets.P12_CER_BASE64 }}
         certificate-password: ${{ secrets.CERTIFICATES_PASSWORD }}
         mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
         code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
         team-id: ${{ secrets.TEAM_ID }}
-        output-path: .build/Artifacts/Example-iOS.ipa/Example-iOS.ipa
+        output-path: .build/Artifacts/Dun.ipa/Dun.ipa
         increment-build-number: ${{ steps.buildnumber.outputs.build_number }}
     - uses: Apple-Actions/upload-testflight-build@master
       with:
-        app-path: .build/Artifacts/Example-iOS.ipa/Example-iOS.ipa
+        app-path: .build/Artifacts/Dun.ipa/Dun.ipa
         issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
         api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
         api-private-key: ${{ secrets.APPSTORE_PRIVATE_KEY }}

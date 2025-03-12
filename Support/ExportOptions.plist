@@ -20,8 +20,8 @@
 	<true/>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.sllvn.example</key>
-		<string>Example-iOS</string>
+		<key>com.sllvn.dun</key>
+		<string>Dun</string>
 	</dict>
 </dict>
 </plist>
