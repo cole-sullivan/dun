@@ -26,7 +26,7 @@ jobs:
         code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
         team-id: ${{ secrets.TEAM_ID }}
         output-path: .build/Artifacts/Example-iOS.ipa/Example-iOS.ipa
-        increment-version-number: "patch"
+        increment-build-number: ${{ steps.buildnumber.outputs.build_number }}
     - uses: Apple-Actions/upload-testflight-build@master
       with:
         app-path: .build/Artifacts/Example-iOS.ipa/Example-iOS.ipa
