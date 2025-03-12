@@ -14,6 +14,8 @@
 		A731AC8D23E01F850090DE52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A731AC8C23E01F850090DE52 /* Assets.xcassets */; };
 		A731AC9023E01F850090DE52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A731AC8E23E01F850090DE52 /* LaunchScreen.storyboard */; };
 		A731AC9B23E01F850090DE52 /* DunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731AC9A23E01F850090DE52 /* DunTests.swift */; };
+		A731ACA123E01F950090DE52 /* TodoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731ACA023E01F950090DE52 /* TodoTask.swift */; };
+		A731ACA323E01FA50090DE52 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731ACA223E01FA50090DE52 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A731AC8023E01F830090DE52 /* Dun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A731AC8023E01F830090DE52 /* Dun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A731AC8323E01F830090DE52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A731AC8523E01F830090DE52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A731AC8723E01F830090DE52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,9 +37,11 @@
 		A731AC8C23E01F850090DE52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A731AC8F23E01F850090DE52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A731AC9123E01F850090DE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A731AC9623E01F850090DE52 /* DunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DunTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A731AC9623E01F850090DE52 /* DunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A731AC9A23E01F850090DE52 /* DunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DunTests.swift; sourceTree = "<group>"; };
 		A731AC9C23E01F850090DE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A731ACA023E01F950090DE52 /* TodoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTask.swift; sourceTree = "<group>"; };
+		A731ACA223E01FA50090DE52 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				A731AC8323E01F830090DE52 /* AppDelegate.swift */,
 				A731AC8523E01F830090DE52 /* SceneDelegate.swift */,
 				A731AC8723E01F830090DE52 /* ViewController.swift */,
+				A731ACA023E01F950090DE52 /* TodoTask.swift */,
+				A731ACA223E01FA50090DE52 /* TaskTableViewCell.swift */,
 				A731AC8923E01F830090DE52 /* Main.storyboard */,
 				A731AC8C23E01F850090DE52 /* Assets.xcassets */,
 				A731AC8E23E01F850090DE52 /* LaunchScreen.storyboard */,
@@ -203,6 +209,8 @@
 				A731AC8823E01F830090DE52 /* ViewController.swift in Sources */,
 				A731AC8423E01F830090DE52 /* AppDelegate.swift in Sources */,
 				A731AC8623E01F830090DE52 /* SceneDelegate.swift in Sources */,
+				A731ACA123E01F950090DE52 /* TodoTask.swift in Sources */,
+				A731ACA323E01FA50090DE52 /* TaskTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
