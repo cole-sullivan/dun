@@ -38,6 +38,7 @@ jobs:
         project-path: Example-iOS/Example-iOS.xcodeproj
         p12-key-base64: ${{ secrets.P12_KEY_BASE64 }}
         p12-cer-base64: ${{ secrets.P12_CER_BASE64 }}
+        certificate-password: ${{ secrets.CERTIFICATES_PASSWORD }}
         mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
         code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
         team-id: ${{ secrets.TEAM_ID }}
